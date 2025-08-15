@@ -44,7 +44,7 @@ const SignIn = () => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-14 pl-4 pr-4 bg-white/20 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/60 focus:bg-white/30 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
+                className="h-14 pl-4 pr-4 bg-white/40 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/70 focus:bg-white/50 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
                 required
               />
               <Mail className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/50 group-focus-within:text-white/80 transition-colors" />
@@ -60,7 +60,7 @@ const SignIn = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="h-14 pl-4 pr-12 bg-white/20 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/60 focus:bg-white/30 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
+                className="h-14 pl-4 pr-12 bg-white/40 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/70 focus:bg-white/50 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
                 required
               />
               <button
