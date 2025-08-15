@@ -30,94 +30,90 @@ const SignIn = () => {
 
   return (
     <AuthLayout 
-      title="Welcome Back" 
-      subtitle="Sign in to continue your lake adventure"
+      title="Your Adventure Starts Here"
     >
-      <form onSubmit={handleSignIn} className="space-y-6">
-        {/* Email Field */}
-        <div className="space-y-2">
-          <Label htmlFor="email" className="text-sm font-medium text-foreground">
-            Email Address
-          </Label>
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              id="email"
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="pl-10 h-12 bg-white/50 border-white/30 focus:bg-white/70 focus:border-primary transition-all"
-              required
-            />
+      <form onSubmit={handleSignIn} className="space-y-8">
+        {/* Input Fields Container */}
+        <div className="space-y-4">
+          {/* Email Field */}
+          <div className="space-y-3">
+            <div className="relative group">
+              <Input
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="h-14 pl-4 pr-4 bg-white/20 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/60 focus:bg-white/30 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
+                required
+              />
+              <Mail className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/50 group-focus-within:text-white/80 transition-colors" />
+            </div>
           </div>
-        </div>
 
-        {/* Password Field */}
-        <div className="space-y-2">
-          <Label htmlFor="password" className="text-sm font-medium text-foreground">
-            Password
-          </Label>
-          <div className="relative">
-            <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              id="password"
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="pl-10 pr-10 h-12 bg-white/50 border-white/30 focus:bg-white/70 focus:border-primary transition-all"
-              required
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+          {/* Password Field */}
+          <div className="space-y-3">
+            <div className="relative group">
+              <Input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="h-14 pl-4 pr-12 bg-white/20 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/60 focus:bg-white/30 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-white/80 transition-colors p-1 rounded-lg hover:bg-white/10"
+              >
+                {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Forgot Password Link */}
+          <div className="text-right pt-2">
+            <Link 
+              to="/forgot-password" 
+              className="text-sm text-white/80 hover:text-white transition-colors font-medium"
             >
-              {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-            </button>
+              Forgot Password?
+            </Link>
           </div>
         </div>
 
-        {/* Forgot Password Link */}
-        <div className="text-right">
-          <Link 
-            to="/forgot-password" 
-            className="text-sm text-primary-light hover:text-primary underline transition-colors"
+        {/* Primary Actions */}
+        <div className="space-y-4">
+          {/* Sign In Button */}
+          <Button 
+            type="submit" 
+            disabled={isLoading}
+            className="h-14 w-full bg-white text-primary font-semibold text-base rounded-2xl hover:bg-white/90 active:scale-[0.98] transition-all duration-200 shadow-lg disabled:opacity-70"
           >
-            Forgot password?
-          </Link>
-        </div>
+            {isLoading ? 'Signing In...' : 'Sign In'}
+          </Button>
 
-        {/* Sign In Button */}
-        <Button 
-          type="submit" 
-          size="full" 
-          disabled={isLoading}
-          className="font-semibold"
-        >
-          {isLoading ? 'Signing In...' : 'Sign In'}
-        </Button>
-
-        {/* Divider */}
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-white/20" />
+          {/* Divider */}
+          <div className="relative py-4">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-white/20" />
+            </div>
+            <div className="relative flex justify-center">
+              <span className="px-6 bg-transparent text-white/60 text-sm font-medium">or</span>
+            </div>
           </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-4 bg-card text-muted-foreground">or</span>
-          </div>
-        </div>
 
-        {/* Create Account Button */}
-        <Button 
-          variant="outline" 
-          size="full"
-          asChild
-          className="border-white/30 bg-white/10 text-foreground hover:bg-white/20 font-semibold"
-        >
-          <Link to="/signup">Create New Account</Link>
-        </Button>
+          {/* Create Account Button */}
+          <Button 
+            variant="outline" 
+            asChild
+            className="h-14 w-full bg-transparent border-2 border-white/30 text-white font-semibold text-base rounded-2xl hover:bg-white/10 hover:border-white/50 active:scale-[0.98] transition-all duration-200"
+          >
+            <Link to="/signup">Create New Account</Link>
+          </Button>
+        </div>
       </form>
     </AuthLayout>
   );
