@@ -68,64 +68,54 @@ const SignUp = () => {
     >
       <form onSubmit={handleSignUp} className="space-y-4">
         {/* Name Field */}
-        <div className="space-y-2">
-          <Label htmlFor="name" className="text-sm font-medium text-foreground">
-            Full Name
-          </Label>
-          <div className="relative">
-            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <div className="space-y-3">
+          <div className="relative group">
             <Input
               id="name"
               type="text"
-              placeholder="Enter your full name"
+              placeholder="Full Name"
               value={formData.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
-              className="pl-10 h-12 bg-white/50 border-white/30 focus:bg-white/70 focus:border-primary transition-all"
+              className="h-14 pl-4 pr-4 bg-white/40 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/70 focus:bg-white/50 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
               required
             />
+            <User className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/50 group-focus-within:text-white/80 transition-colors" />
           </div>
         </div>
 
         {/* Email Field */}
-        <div className="space-y-2">
-          <Label htmlFor="email" className="text-sm font-medium text-foreground">
-            Email Address
-          </Label>
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <div className="space-y-3">
+          <div className="relative group">
             <Input
               id="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className="pl-10 h-12 bg-white/50 border-white/30 focus:bg-white/70 focus:border-primary transition-all"
+              className="h-14 pl-4 pr-4 bg-white/40 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/70 focus:bg-white/50 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
               required
             />
+            <Mail className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/50 group-focus-within:text-white/80 transition-colors" />
           </div>
         </div>
 
         {/* Password Field */}
-        <div className="space-y-2">
-          <Label htmlFor="password" className="text-sm font-medium text-foreground">
-            Password
-          </Label>
-          <div className="relative">
-            <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <div className="space-y-3">
+          <div className="relative group">
             <Input
               id="password"
               type={showPassword ? 'text' : 'password'}
-              placeholder="Create a password"
+              placeholder="Password"
               value={formData.password}
               onChange={(e) => handleInputChange('password', e.target.value)}
-              className="pl-10 pr-10 h-12 bg-white/50 border-white/30 focus:bg-white/70 focus:border-primary transition-all"
+              className="h-14 pl-4 pr-12 bg-white/40 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/70 focus:bg-white/50 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
               required
               minLength={8}
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-white/80 transition-colors p-1 rounded-lg hover:bg-white/10"
             >
               {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
             </button>
@@ -133,25 +123,21 @@ const SignUp = () => {
         </div>
 
         {/* Confirm Password Field */}
-        <div className="space-y-2">
-          <Label htmlFor="confirmPassword" className="text-sm font-medium text-foreground">
-            Confirm Password
-          </Label>
-          <div className="relative">
-            <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <div className="space-y-3">
+          <div className="relative group">
             <Input
               id="confirmPassword"
               type={showConfirmPassword ? 'text' : 'password'}
-              placeholder="Confirm your password"
+              placeholder="Confirm Password"
               value={formData.confirmPassword}
               onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-              className="pl-10 pr-10 h-12 bg-white/50 border-white/30 focus:bg-white/70 focus:border-primary transition-all"
+              className="h-14 pl-4 pr-12 bg-white/40 backdrop-blur-sm border-0 rounded-2xl text-white placeholder:text-white/70 focus:bg-white/50 focus:ring-2 focus:ring-white/40 transition-all duration-300 text-base font-medium"
               required
             />
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-white/80 transition-colors p-1 rounded-lg hover:bg-white/10"
             >
               {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
             </button>
