@@ -44,7 +44,7 @@ const AuthLayout = ({ children, title, subtitle }: AuthLayoutProps) => {
           </div>
 
           {/* Auth Form Container */}
-          <div className="bg-card-glass backdrop-blur-md rounded-2xl border border-white/20 shadow-depth p-8 space-y-6">
+          <div className="space-y-6">
             {children}
           </div>
         </div>
