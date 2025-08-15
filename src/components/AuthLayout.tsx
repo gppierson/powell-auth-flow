@@ -16,8 +16,8 @@ const AuthLayout = ({ children, title, subtitle }: AuthLayoutProps) => {
           backgroundImage: `url('/lovable-uploads/b50c893c-d40d-4b21-8cb8-9244adc918f3.png')`
         }}
       >
-        {/* Overlay gradient for better readability */}
-        <div className="absolute inset-0 bg-gradient-backdrop" />
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* Content */}
