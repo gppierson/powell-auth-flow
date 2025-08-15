@@ -145,23 +145,23 @@ const SignUp = () => {
         </div>
 
         {/* Terms Checkbox */}
-        <div className="flex items-center space-x-3 pt-2">
+        <div className="flex items-center space-x-3 pt-4">
           <Checkbox 
             id="terms" 
             checked={acceptTerms}
             onCheckedChange={(checked) => setAcceptTerms(checked === true)}
-            className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+            className="data-[state=checked]:bg-white data-[state=checked]:border-white data-[state=checked]:text-primary border-white/50 bg-white/20"
           />
           <Label 
             htmlFor="terms" 
-            className="text-sm text-foreground cursor-pointer leading-relaxed"
+            className="text-sm text-white cursor-pointer leading-relaxed"
           >
             I agree to the{' '}
-            <Link to="/terms" className="text-primary-light hover:text-primary underline">
+            <Link to="/terms" className="text-white/80 hover:text-white underline">
               Terms of Service
             </Link>
             {' '}and{' '}
-            <Link to="/privacy" className="text-primary-light hover:text-primary underline">
+            <Link to="/privacy" className="text-white/80 hover:text-white underline">
               Privacy Policy
             </Link>
           </Label>
@@ -170,29 +170,27 @@ const SignUp = () => {
         {/* Sign Up Button */}
         <Button 
           type="submit" 
-          size="full" 
           disabled={isLoading}
-          className="font-semibold mt-6"
+          className="h-14 w-full bg-white text-primary font-semibold text-base rounded-2xl hover:bg-white/90 active:scale-[0.98] transition-all duration-200 shadow-lg disabled:opacity-70 mt-6"
         >
           {isLoading ? 'Creating Account...' : 'Create Account'}
         </Button>
 
         {/* Divider */}
-        <div className="relative">
+        <div className="relative py-4">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-white/20" />
           </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-4 bg-card text-muted-foreground">Already have an account?</span>
+          <div className="relative flex justify-center">
+            <span className="px-6 bg-transparent text-white/60 text-sm font-medium">Already have an account?</span>
           </div>
         </div>
 
         {/* Sign In Link */}
         <Button 
-          variant="ghost" 
-          size="full"
+          variant="outline" 
           asChild
-          className="text-foreground hover:text-primary-light font-semibold"
+          className="h-14 w-full bg-transparent border-2 border-white/30 text-white font-semibold text-base rounded-2xl hover:bg-white/10 hover:border-white/50 active:scale-[0.98] transition-all duration-200"
         >
           <Link to="/signin">Sign In Instead</Link>
         </Button>
