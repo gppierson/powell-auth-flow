@@ -145,23 +145,23 @@ const SignUp = () => {
         </div>
 
         {/* Terms Checkbox */}
-        <div className="flex items-center space-x-3 pt-4">
+        <div className="flex items-start space-x-3 pt-4 justify-center">
           <Checkbox 
             id="terms" 
             checked={acceptTerms}
             onCheckedChange={(checked) => setAcceptTerms(checked === true)}
-            className="data-[state=checked]:bg-white data-[state=checked]:border-white data-[state=checked]:text-primary border-white/50 bg-white/20"
+            className="data-[state=checked]:bg-white data-[state=checked]:border-white data-[state=checked]:text-primary border-2 border-white bg-white/80 mt-0.5 h-5 w-5"
           />
           <Label 
             htmlFor="terms" 
-            className="text-sm text-white cursor-pointer leading-relaxed"
+            className="text-sm text-white cursor-pointer leading-relaxed max-w-sm text-center"
           >
             I agree to the{' '}
-            <Link to="/terms" className="text-white/80 hover:text-white underline">
+            <Link to="/terms" className="text-white/90 hover:text-white underline font-medium">
               Terms of Service
             </Link>
             {' '}and{' '}
-            <Link to="/privacy" className="text-white/80 hover:text-white underline">
+            <Link to="/privacy" className="text-white/90 hover:text-white underline font-medium">
               Privacy Policy
             </Link>
           </Label>
