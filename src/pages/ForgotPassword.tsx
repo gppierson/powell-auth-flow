@@ -80,16 +80,6 @@ const ForgotPassword = () => {
       subtitle="Enter your email to receive reset instructions"
     >
       <form onSubmit={handleResetPassword} className="space-y-8">
-        {/* Back to Sign In */}
-        <div className="flex items-center space-x-2 text-sm">
-          <ArrowLeft className="w-4 h-4 text-white/70" />
-          <Link 
-            to="/signin" 
-            className="text-white/80 hover:text-white transition-colors font-medium"
-          >
-            Back to Sign In
-          </Link>
-        </div>
 
         {/* Email Field */}
         <div className="space-y-3">
