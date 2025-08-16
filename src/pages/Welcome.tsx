@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, MapPin, Anchor } from "lucide-react";
+import { MapPin, Anchor } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Welcome = () => {
@@ -28,50 +28,52 @@ const Welcome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl mx-auto">
-        <div className="text-center mb-8 animate-fade-in">
-          <div className="flex justify-center mb-6">
-            <div className="bg-gradient-hero rounded-full p-4 shadow-medium">
-              <CheckCircle className="w-12 h-12 text-primary-foreground" />
-            </div>
+    <div className="min-h-screen bg-background flex flex-col justify-center p-4 py-8">
+      <div className="w-full max-w-lg mx-auto">
+        <div className="text-center mb-6 animate-fade-in">
+          <div className="flex justify-center mb-4">
+            <img 
+              src="/lovable-uploads/9ca600e0-ffc4-4e33-9b1a-8bd3d97c3757.png" 
+              alt="Lake Powell Navigator Logo" 
+              className="w-16 h-16 rounded-2xl shadow-medium"
+            />
           </div>
           
-          <h1 className="text-4xl font-bold text-foreground mb-4 bg-gradient-hero bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold text-foreground mb-2 bg-gradient-hero bg-clip-text text-transparent">
             Welcome to Lake Powell Navigator!
           </h1>
           
-          <p className="text-lg text-muted-foreground max-w-md mx-auto">
-            Your account has been successfully created. You're ready to explore the beautiful waters of Lake Powell.
+          <p className="text-sm text-muted-foreground">
+            Account created successfully. Ready to explore!
           </p>
         </div>
 
         <Card className="shadow-soft border-2 border-border/50 animate-slide-in">
-          <CardHeader className="text-center pb-4">
-            <div className="flex justify-center mb-4">
-              <div className="bg-gradient-warm rounded-full p-3">
-                <Anchor className="w-8 h-8 text-secondary-foreground" />
+          <CardHeader className="text-center pb-3">
+            <div className="flex justify-center mb-2">
+              <div className="bg-gradient-warm rounded-full p-2">
+                <Anchor className="w-5 h-5 text-secondary-foreground" />
               </div>
             </div>
             
-            <CardTitle className="text-2xl text-foreground flex items-center justify-center gap-2">
-              <MapPin className="w-6 h-6 text-primary" />
-              Set Your Default Marina
+            <CardTitle className="text-lg text-foreground flex items-center justify-center gap-2">
+              <MapPin className="w-4 h-4 text-primary" />
+              Set Default Marina
             </CardTitle>
             
-            <CardDescription className="text-base text-muted-foreground">
-              Choose your preferred starting point for navigation (you can change this later)
+            <CardDescription className="text-sm text-muted-foreground">
+              Choose your preferred starting point (optional)
             </CardDescription>
           </CardHeader>
           
-          <CardContent className="space-y-6">
-            <RadioGroup value={selectedMarina} onValueChange={setSelectedMarina} className="space-y-4">
+          <CardContent className="space-y-4">
+            <RadioGroup value={selectedMarina} onValueChange={setSelectedMarina} className="space-y-2">
               {marinas.map((marina) => (
-                <div key={marina} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+                <div key={marina} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
                   <RadioGroupItem value={marina} id={marina} />
                   <Label 
                     htmlFor={marina} 
-                    className="flex-1 text-base font-medium text-foreground cursor-pointer"
+                    className="flex-1 text-sm font-medium text-foreground cursor-pointer"
                   >
                     {marina}
                   </Label>
@@ -79,12 +81,11 @@ const Welcome = () => {
               ))}
             </RadioGroup>
 
-            <div className="flex flex-col sm:flex-row gap-3 pt-6">
+            <div className="flex flex-col gap-2 pt-4">
               <Button 
                 onClick={handleSetMarina}
                 disabled={!selectedMarina}
-                className="flex-1"
-                size="lg"
+                className="w-full"
               >
                 Set Marina & Continue
               </Button>
@@ -92,23 +93,22 @@ const Welcome = () => {
               <Button 
                 variant="outline" 
                 onClick={handleSkip}
-                className="flex-1"
-                size="lg"
+                className="w-full"
               >
                 Skip for Now
               </Button>
             </div>
 
-            <p className="text-sm text-muted-foreground text-center mt-4">
-              Don't worry - you can always set or change your default marina later in your profile settings.
+            <p className="text-xs text-muted-foreground text-center mt-3">
+              You can change this later in settings
             </p>
           </CardContent>
         </Card>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-4">
           <Link 
             to="/" 
-            className="text-primary hover:text-primary-light transition-colors font-medium"
+            className="text-sm text-primary hover:text-primary-light transition-colors font-medium"
           >
             Return to Home
           </Link>
