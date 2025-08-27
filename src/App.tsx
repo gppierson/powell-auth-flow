@@ -8,6 +8,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import Welcome from "./pages/Welcome";
+import Paywall from "./pages/Paywall";
 import MapDownload from "./pages/MapDownload";
 import Map from "./pages/Map";
 import NotFound from "./pages/NotFound";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/welcome" element={<Welcome />} />
+          <Route path="/paywall" element={<Paywall />} />
           <Route path="/map-download" element={<MapDownload />} />
           <Route path="/map" element={<Map />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
