@@ -61,47 +61,50 @@ const Paywall = () => {
 
           {/* Timeline Card */}
           <section className="mb-6">
-            <div className="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-5">
-              {/* Vertical connecting line */}
-              <div className="absolute left-[45px] top-[40px] bottom-[40px] w-[2px] bg-white/20" aria-hidden="true" />
-              
-              <div className="relative flex gap-3 mb-5">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
-                  <CheckCircle className="w-5 h-5 text-white" />
+            <div className="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6">
+              {/* Timeline items with connecting line */}
+              <div className="relative">
+                {/* Vertical connecting line - positioned behind circles */}
+                <div className="absolute left-5 top-8 bottom-8 w-0.5 bg-gradient-to-b from-white/30 via-white/20 to-white/30" aria-hidden="true" />
+                
+                <div className="relative flex gap-4 mb-6">
+                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="pt-0.5">
+                    <h3 className="text-sm font-semibold text-white">Installed</h3>
+                    <p className="text-xs text-white/80 leading-relaxed">Your profile is set. Welcome aboard.</p>
+                  </div>
                 </div>
-                <div className="pt-0.5">
-                  <h3 className="text-sm font-semibold text-white">Installed</h3>
-                  <p className="text-xs text-white/80">Your profile is set. Welcome aboard.</p>
-                </div>
-              </div>
 
-              <div className="relative flex gap-3 mb-5">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
-                  <Waves className="w-5 h-5 text-white" />
+                <div className="relative flex gap-4 mb-6">
+                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
+                    <Waves className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="pt-0.5">
+                    <h3 className="text-sm font-semibold text-white">Today — Get instant access</h3>
+                    <p className="text-xs text-white/80 leading-relaxed">Offline maps, tracking, waypoints, trip planning, and all the premium features.</p>
+                  </div>
                 </div>
-                <div className="pt-0.5">
-                  <h3 className="text-sm font-semibold text-white">Today — Get instant access</h3>
-                  <p className="text-xs text-white/80">Offline maps, tracking, waypoints, trip planning, and all the premium features.</p>
-                </div>
-              </div>
 
-              <div className="relative flex gap-3 mb-5">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
-                  <Star className="w-5 h-5 text-white" />
+                <div className="relative flex gap-4 mb-6">
+                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
+                    <Star className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="pt-0.5">
+                    <h3 className="text-sm font-semibold text-white">Day 7 — Trial ends</h3>
+                    <p className="text-xs text-white/80 leading-relaxed">Cancel anytime. Keep basic features forever.</p>
+                  </div>
                 </div>
-                <div className="pt-0.5">
-                  <h3 className="text-sm font-semibold text-white">Day 7 — Trial ends</h3>
-                  <p className="text-xs text-white/80">Cancel anytime. Keep basic features forever.</p>
-                </div>
-              </div>
 
-              <div className="relative flex gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
-                  <CreditCard className="w-5 h-5 text-white" />
-                </div>
-                <div className="pt-0.5">
-                  <h3 className="text-sm font-semibold text-white">Billed yearly</h3>
-                  <p className="text-xs text-white/80">Transparent pricing. Manage in Settings.</p>
+                <div className="relative flex gap-4">
+                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
+                    <CreditCard className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="pt-0.5">
+                    <h3 className="text-sm font-semibold text-white">Billed yearly</h3>
+                    <p className="text-xs text-white/80 leading-relaxed">Transparent pricing. Manage in Settings.</p>
+                  </div>
                 </div>
               </div>
             </div>
