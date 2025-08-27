@@ -51,14 +51,6 @@ const Paywall = () => {
         <article className="w-full max-w-sm mx-auto animate-fade-in">
           {/* Header */}
           <header className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg mb-5">
-              <img
-                src="/lovable-uploads/9ca600e0-ffc4-4e33-9b1a-8bd3d97c3757.png"
-                alt="Lake Powell Navigator logo"
-                className="w-12 h-12 object-contain"
-                loading="lazy"
-              />
-            </div>
             <h1 className="text-4xl font-bold text-white mb-3">
               Go Premium
             </h1>
@@ -69,9 +61,12 @@ const Paywall = () => {
 
           {/* Timeline Card */}
           <section className="mb-6">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-5 space-y-5">
-              <div className="flex gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+            <div className="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-5">
+              {/* Vertical connecting line */}
+              <div className="absolute left-[45px] top-[40px] bottom-[40px] w-[2px] bg-white/20" aria-hidden="true" />
+              
+              <div className="relative flex gap-3 mb-5">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
                 <div className="pt-0.5">
@@ -80,8 +75,8 @@ const Paywall = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+              <div className="relative flex gap-3 mb-5">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
                   <Waves className="w-5 h-5 text-white" />
                 </div>
                 <div className="pt-0.5">
@@ -90,8 +85,8 @@ const Paywall = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+              <div className="relative flex gap-3 mb-5">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
                   <Star className="w-5 h-5 text-white" />
                 </div>
                 <div className="pt-0.5">
@@ -100,8 +95,8 @@ const Paywall = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+              <div className="relative flex gap-3">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 z-10">
                   <CreditCard className="w-5 h-5 text-white" />
                 </div>
                 <div className="pt-0.5">
