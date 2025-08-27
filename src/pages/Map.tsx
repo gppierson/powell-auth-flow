@@ -25,11 +25,11 @@ const Map = () => {
             </div>
             
             <h2 className="text-xl font-bold text-foreground">
-              You Still Need to Download the Map
+              Don't Forget Your Map
             </h2>
             
             <p className="text-sm text-muted-foreground">
-              Download the Lake Powell map to navigate
+              You'll need it once you're on the water
             </p>
 
             <Button 
