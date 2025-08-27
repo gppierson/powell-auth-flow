@@ -138,15 +138,6 @@ const MapDownload = () => {
             </p>
           </CardContent>
         </Card>
-
-        <div className="text-center mt-4">
-          <Link 
-            to="/welcome" 
-            className="text-sm text-primary hover:text-primary-light transition-colors font-medium"
-          >
-            Back to Welcome
-          </Link>
-        </div>
       </div>
     </div>
   );
