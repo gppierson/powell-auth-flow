@@ -37,7 +37,7 @@ const Map = () => {
               className="w-full flex items-center gap-2"
             >
               <Download className="w-4 h-4" />
-              Download Map (45 MB)
+              Download Map (52 MB)
             </Button>
           </CardContent>
         </Card>
