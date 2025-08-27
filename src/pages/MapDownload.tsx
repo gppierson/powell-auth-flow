@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { WifiOff, Download, MapPin, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
 
 const MapDownload = () => {
+  const navigate = useNavigate();
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [downloadComplete, setDownloadComplete] = useState(false);
@@ -27,8 +28,8 @@ const MapDownload = () => {
   };
 
   const handleSkip = () => {
-    // Navigate to main app
-    console.log("Skipping map download");
+    // Navigate to map page
+    navigate('/map');
   };
 
   return (
