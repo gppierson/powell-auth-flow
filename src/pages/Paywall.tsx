@@ -47,79 +47,66 @@ const Paywall = () => {
         aria-hidden="true"
       />
 
-      <main className="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 py-12">
+      <main className="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 py-6">
         <article className="w-full max-w-sm mx-auto animate-fade-in">
           {/* Header */}
-          <header className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-white mb-3">
+          <header className="text-center mb-4">
+            <h1 className="text-3xl font-bold text-white mb-2">
               Go Premium
             </h1>
-            <p className="text-white/90 text-sm px-6 leading-relaxed">
+            <p className="text-white/90 text-xs px-4 leading-relaxed">
               Unlock all downloadable maps, smart waypoints, navigation tracking, and trip planning for Lake Powell.
             </p>
           </header>
 
           {/* Timeline Card */}
-          <section className="mb-6">
-            <div className="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6">
+          <section className="mb-4">
+            <div className="relative bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4">
               {/* Timeline items with connecting line */}
               <div className="relative">
                 {/* Vertical connecting line through centers of circles */}
                 <div 
-                  className="absolute left-[28px] top-[28px] w-[1px] bg-white/25"
-                  style={{ height: 'calc(100% - 28px)' }}
+                  className="absolute left-5 top-5 bottom-5 w-[1px] bg-white/25"
                   aria-hidden="true" 
                 />
                 
-                <div className="relative flex gap-4 mb-7">
-                  <div className="relative flex items-center justify-center w-14 h-14">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
-                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
-                      <CheckCircle className="w-6 h-6 text-white" />
-                    </div>
+                <div className="relative flex gap-3 mb-4">
+                  <div className="relative w-10 h-10 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center shrink-0">
+                    <CheckCircle className="w-5 h-5 text-white" />
                   </div>
-                  <div className="pt-2">
-                    <h3 className="text-sm font-semibold text-white">Installed</h3>
-                    <p className="text-xs text-white/75 leading-relaxed">Your profile is set. Welcome aboard.</p>
+                  <div className="pt-1">
+                    <h3 className="text-xs font-semibold text-white">Installed</h3>
+                    <p className="text-[11px] text-white/75 leading-tight">Your profile is set. Welcome aboard.</p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-4 mb-7">
-                  <div className="relative flex items-center justify-center w-14 h-14">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
-                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
-                      <Waves className="w-6 h-6 text-white" />
-                    </div>
+                <div className="relative flex gap-3 mb-4">
+                  <div className="relative w-10 h-10 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center shrink-0">
+                    <Waves className="w-5 h-5 text-white" />
                   </div>
-                  <div className="pt-2">
-                    <h3 className="text-sm font-semibold text-white">Today — Get instant access</h3>
-                    <p className="text-xs text-white/75 leading-relaxed">Offline maps, tracking, waypoints, trip planning, and all the premium features.</p>
+                  <div className="pt-1">
+                    <h3 className="text-xs font-semibold text-white">Today — Get instant access</h3>
+                    <p className="text-[11px] text-white/75 leading-tight">Offline maps, tracking, waypoints, trip planning, and all the premium features.</p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-4 mb-7">
-                  <div className="relative flex items-center justify-center w-14 h-14">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
-                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
-                      <Star className="w-6 h-6 text-white" />
-                    </div>
+                <div className="relative flex gap-3 mb-4">
+                  <div className="relative w-10 h-10 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center shrink-0">
+                    <Star className="w-5 h-5 text-white" />
                   </div>
-                  <div className="pt-2">
-                    <h3 className="text-sm font-semibold text-white">Day 7 — Trial ends</h3>
-                    <p className="text-xs text-white/75 leading-relaxed">Cancel anytime. Keep basic features forever.</p>
+                  <div className="pt-1">
+                    <h3 className="text-xs font-semibold text-white">Day 7 — Trial ends</h3>
+                    <p className="text-[11px] text-white/75 leading-tight">Cancel anytime. Keep basic features forever.</p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-4">
-                  <div className="relative flex items-center justify-center w-14 h-14">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
-                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
-                      <CreditCard className="w-6 h-6 text-white" />
-                    </div>
+                <div className="relative flex gap-3">
+                  <div className="relative w-10 h-10 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center shrink-0">
+                    <CreditCard className="w-5 h-5 text-white" />
                   </div>
-                  <div className="pt-2">
-                    <h3 className="text-sm font-semibold text-white">Billed yearly</h3>
-                    <p className="text-xs text-white/75 leading-relaxed">Transparent pricing. Manage in Settings.</p>
+                  <div className="pt-1">
+                    <h3 className="text-xs font-semibold text-white">Billed yearly</h3>
+                    <p className="text-[11px] text-white/75 leading-tight">Transparent pricing. Manage in Settings.</p>
                   </div>
                 </div>
               </div>
@@ -127,45 +114,45 @@ const Paywall = () => {
           </section>
 
           {/* Pricing Plans */}
-          <div className="space-y-3 mb-6">
+          <div className="space-y-2 mb-4">
             {/* Yearly Plan */}
             <div
-              className={`relative p-4 rounded-2xl cursor-pointer transition-all ${
+              className={`relative p-3 rounded-xl cursor-pointer transition-all ${
                 selectedPlan === 'yearly'
-                  ? 'bg-gradient-to-r from-[#ff6b35] to-[#ff8a65] text-white shadow-lg scale-105'
+                  ? 'bg-gradient-to-r from-[#ff6b35] to-[#ff8a65] text-white shadow-lg'
                   : 'bg-white/10 backdrop-blur-sm text-white border border-white/20'
               }`}
               onClick={() => setSelectedPlan('yearly')}
             >
               {selectedPlan === 'yearly' && (
-                <div className="absolute -top-3 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                <div className="absolute -top-2 right-3 bg-blue-600 text-white px-2 py-0.5 rounded-full text-[10px] font-bold">
                   SAVE 67%
                 </div>
               )}
-              <div className="space-y-1.5">
-                <h3 className="text-xs font-medium uppercase tracking-wider opacity-90">Yearly Premium</h3>
-                <p className="text-xl font-bold">Free trial for 1 week</p>
+              <div className="space-y-1">
+                <h3 className="text-[10px] font-medium uppercase tracking-wider opacity-90">Yearly Premium</h3>
+                <p className="text-base font-bold">Free trial for 1 week</p>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-lg font-semibold">$39.99 / year</span>
-                  <span className="text-sm opacity-80">$0.11 / day</span>
+                  <span className="text-sm font-semibold">$39.99 / year</span>
+                  <span className="text-xs opacity-80">$0.11 / day</span>
                 </div>
               </div>
             </div>
 
             {/* Monthly Plan */}
             <div
-              className={`p-4 rounded-2xl cursor-pointer transition-all ${
+              className={`p-3 rounded-xl cursor-pointer transition-all ${
                 selectedPlan === 'monthly'
-                  ? 'bg-gradient-to-r from-[#ff6b35] to-[#ff8a65] text-white shadow-lg scale-105'
+                  ? 'bg-gradient-to-r from-[#ff6b35] to-[#ff8a65] text-white shadow-lg'
                   : 'bg-white/10 backdrop-blur-sm text-white border border-white/20'
               }`}
               onClick={() => setSelectedPlan('monthly')}
             >
-              <div className="space-y-1.5">
-                <h3 className="text-xs font-medium uppercase tracking-wider opacity-90">Monthly Premium</h3>
+              <div className="space-y-1">
+                <h3 className="text-[10px] font-medium uppercase tracking-wider opacity-90">Monthly Premium</h3>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-lg font-semibold">$9.99 / month</span>
-                  <span className="text-sm opacity-80">$0.33 / day</span>
+                  <span className="text-sm font-semibold">$9.99 / month</span>
+                  <span className="text-xs opacity-80">$0.33 / day</span>
                 </div>
               </div>
             </div>
@@ -174,17 +161,17 @@ const Paywall = () => {
           {/* CTA Button */}
           <Button 
             onClick={handleStartTrial} 
-            className="w-full h-14 text-base font-semibold rounded-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg"
+            className="w-full h-12 text-sm font-semibold rounded-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg"
           >
             Start free trial
           </Button>
 
           {/* Footer Text */}
-          <div className="mt-4 text-center">
-            <p className="text-white/80 text-xs">
+          <div className="mt-3 text-center">
+            <p className="text-white/80 text-[11px]">
               Then {selectedPlan === 'yearly' ? '$39.99 / year' : '$9.99 / month'}. Recurring billing. Cancel anytime.
             </p>
-            <button className="mt-3 text-sm text-white/90 underline">
+            <button className="mt-2 text-xs text-white/90 underline">
               Redeem code
             </button>
           </div>
