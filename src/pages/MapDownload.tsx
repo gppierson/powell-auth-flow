@@ -44,47 +44,40 @@ const MapDownload = () => {
           </div>
           
           <h1 className="text-2xl font-bold text-foreground mb-2 bg-gradient-hero bg-clip-text text-transparent">
-            Download Offline Map
+            Download Lake Powell Map
           </h1>
           
           <p className="text-sm text-muted-foreground">
-            Essential for navigation at Lake Powell
+            Your complete navigation guide - works without signal
           </p>
         </div>
 
         <Card className="shadow-soft border-2 border-border/50 animate-slide-in">
           <CardHeader className="text-center pb-3">
-            <div className="flex justify-center mb-2">
-              <div className="bg-destructive/10 rounded-full p-2">
-                <WifiOff className="w-5 h-5 text-destructive" />
-              </div>
-            </div>
-            
             <CardTitle className="text-lg text-foreground flex items-center justify-center gap-2">
-              <MapPin className="w-4 h-4 text-primary" />
-              Limited Connectivity at Lake Powell
+              📍 No Cell Service on the Lake
             </CardTitle>
             
             <CardDescription className="text-sm text-muted-foreground px-4">
-              WiFi and cellular service are generally unavailable on the lake. Download the map now to ensure you can navigate safely.
+              Once you're on Lake Powell, you're offline. Get the map now while you have connection.
             </CardDescription>
           </CardHeader>
           
           <CardContent className="space-y-4">
             <div className="bg-muted/50 rounded-lg p-3 space-y-2">
-              <h3 className="text-sm font-semibold text-foreground">Why download?</h3>
+              <h3 className="text-sm font-semibold text-foreground">Why You Need This:</h3>
               <ul className="text-xs text-muted-foreground space-y-1">
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">•</span>
-                  <span>Navigate without internet connection</span>
+                  <span>Navigate confidently - All waypoints, marinas, and coves marked</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">•</span>
-                  <span>Access all waypoints and marina locations</span>
+                  <span>Find hidden gems - Discover beaches and anchorages locals love</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">•</span>
-                  <span>View detailed lake topography offline</span>
+                  <span>Stay safe - Never get lost, even in remote canyon areas</span>
                 </li>
               </ul>
             </div>
@@ -115,7 +108,7 @@ const MapDownload = () => {
                     className="w-full flex items-center gap-2"
                   >
                     <Download className="w-4 h-4" />
-                    {isDownloading ? "Downloading..." : "Download Map (45 MB)"}
+                    {isDownloading ? "Downloading..." : "Get Map Now (45 MB)"}
                   </Button>
                   
                   <Button 
@@ -124,7 +117,7 @@ const MapDownload = () => {
                     disabled={isDownloading}
                     className="w-full"
                   >
-                    Download Later
+                    Remind Me Later
                   </Button>
                 </>
               ) : (
@@ -140,7 +133,7 @@ const MapDownload = () => {
             <p className="text-xs text-muted-foreground text-center mt-3">
               {downloadComplete 
                 ? "You're all set for offline navigation!" 
-                : "Recommended: Download now while connected"}
+                : "Takes 30 seconds on WiFi"}
             </p>
           </CardContent>
         </Card>
