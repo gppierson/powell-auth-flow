@@ -64,46 +64,62 @@ const Paywall = () => {
             <div className="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6">
               {/* Timeline items with connecting line */}
               <div className="relative">
-                {/* Vertical connecting line - positioned behind circles */}
-                <div className="absolute left-5 top-8 bottom-8 w-0.5 bg-gradient-to-b from-white/30 via-white/20 to-white/30" aria-hidden="true" />
+                {/* Vertical connecting line through centers of circles */}
+                <div 
+                  className="absolute left-[28px] top-[28px] w-[1px] bg-white/25"
+                  style={{ height: 'calc(100% - 28px)' }}
+                  aria-hidden="true" 
+                />
                 
-                <div className="relative flex gap-4 mb-6">
-                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
-                    <CheckCircle className="w-5 h-5 text-white" />
+                <div className="relative flex gap-4 mb-7">
+                  <div className="relative flex items-center justify-center w-14 h-14">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
+                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                      <CheckCircle className="w-6 h-6 text-white" />
+                    </div>
                   </div>
-                  <div className="pt-0.5">
+                  <div className="pt-2">
                     <h3 className="text-sm font-semibold text-white">Installed</h3>
-                    <p className="text-xs text-white/80 leading-relaxed">Your profile is set. Welcome aboard.</p>
+                    <p className="text-xs text-white/75 leading-relaxed">Your profile is set. Welcome aboard.</p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-4 mb-6">
-                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
-                    <Waves className="w-5 h-5 text-white" />
+                <div className="relative flex gap-4 mb-7">
+                  <div className="relative flex items-center justify-center w-14 h-14">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
+                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                      <Waves className="w-6 h-6 text-white" />
+                    </div>
                   </div>
-                  <div className="pt-0.5">
+                  <div className="pt-2">
                     <h3 className="text-sm font-semibold text-white">Today — Get instant access</h3>
-                    <p className="text-xs text-white/80 leading-relaxed">Offline maps, tracking, waypoints, trip planning, and all the premium features.</p>
+                    <p className="text-xs text-white/75 leading-relaxed">Offline maps, tracking, waypoints, trip planning, and all the premium features.</p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-4 mb-6">
-                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
-                    <Star className="w-5 h-5 text-white" />
+                <div className="relative flex gap-4 mb-7">
+                  <div className="relative flex items-center justify-center w-14 h-14">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
+                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                      <Star className="w-6 h-6 text-white" />
+                    </div>
                   </div>
-                  <div className="pt-0.5">
+                  <div className="pt-2">
                     <h3 className="text-sm font-semibold text-white">Day 7 — Trial ends</h3>
-                    <p className="text-xs text-white/80 leading-relaxed">Cancel anytime. Keep basic features forever.</p>
+                    <p className="text-xs text-white/75 leading-relaxed">Cancel anytime. Keep basic features forever.</p>
                   </div>
                 </div>
 
                 <div className="relative flex gap-4">
-                  <div className="relative w-10 h-10 rounded-full bg-white/25 border-2 border-white/40 flex items-center justify-center shrink-0 backdrop-blur-sm">
-                    <CreditCard className="w-5 h-5 text-white" />
+                  <div className="relative flex items-center justify-center w-14 h-14">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-white/10 blur-sm" />
+                    <div className="relative w-14 h-14 rounded-full bg-[#5a8fb9]/80 border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                      <CreditCard className="w-6 h-6 text-white" />
+                    </div>
                   </div>
-                  <div className="pt-0.5">
+                  <div className="pt-2">
                     <h3 className="text-sm font-semibold text-white">Billed yearly</h3>
-                    <p className="text-xs text-white/80 leading-relaxed">Transparent pricing. Manage in Settings.</p>
+                    <p className="text-xs text-white/75 leading-relaxed">Transparent pricing. Manage in Settings.</p>
                   </div>
                 </div>
               </div>
