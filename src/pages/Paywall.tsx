@@ -1,12 +1,36 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Users, Star, CreditCard } from "lucide-react";
+import { CheckCircle2, Waves, Star, CreditCard } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const Paywall = () => {
   const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState<'yearly' | 'monthly'>('yearly');
+
+  // Lightweight SEO without extra dependencies
+  useEffect(() => {
+    document.title = "Go Premium – Lake Powell Navigator";
+
+    const description = "Unlock offline maps, waypoints, and tools. Free 7‑day trial.";
+    let metaDesc = document.querySelector("meta[name='description']");
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.setAttribute('content', description);
+
+    // Canonical
+    const href = window.location.origin + "/paywall";
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', href);
+  }, []);
 
   const handleStartTrial = () => {
     // Handle payment/trial logic here
@@ -14,123 +38,139 @@ const Paywall = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/20 flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md mx-auto space-y-8">
-        {/* Timeline/Progress indicators */}
-        <div className="space-y-8 relative">
-          {/* Vertical line connecting the dots */}
-          <div className="absolute left-[22px] top-8 bottom-8 w-0.5 bg-primary/30" />
-          
-          {/* Step 1 */}
-          <div className="flex gap-4 relative">
-            <div className="w-11 h-11 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-5 h-5 text-primary" />
-            </div>
-            <div className="space-y-1 pt-1">
-              <h3 className="text-sm font-medium text-muted-foreground">Get the app</h3>
-              <p className="text-sm text-foreground">You successfully created your profile.</p>
-            </div>
-          </div>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Scenic background to match app hero */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/b50c893c-d40d-4b21-8cb8-9244adc918f3.png')`,
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-gradient-backdrop" aria-hidden="true" />
 
-          {/* Step 2 */}
-          <div className="flex gap-4 relative">
-            <div className="w-11 h-11 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center shrink-0">
-              <Users className="w-5 h-5 text-primary" />
+      <main className="relative z-10 min-h-screen flex items-center justify-center p-4">
+        <article className="w-full max-w-2xl mx-auto animate-fade-in">
+          {/* Header */}
+          <header className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-card-glass backdrop-blur-md border border-white/20 shadow-depth mb-5">
+              <img
+                src="/lovable-uploads/9ca600e0-ffc4-4e33-9b1a-8bd3d97c3757.png"
+                alt="Lake Powell Navigator logo"
+                className="w-12 h-12 object-contain"
+                loading="lazy"
+              />
             </div>
-            <div className="space-y-1 pt-1">
-              <h3 className="text-base font-semibold text-foreground">Today - Get instant access</h3>
-              <p className="text-sm text-muted-foreground">Navigate with confidence, explore with purpose.</p>
-              <p className="text-sm text-muted-foreground">Access to offline maps, marina info, and navigation tools.</p>
-            </div>
-          </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+              Go Premium
+            </h1>
+            <p className="mt-2 text-white/85 text-base md:text-lg max-w-xl mx-auto">
+              Unlock offline maps, smart waypoints, and navigation tools for Lake Powell.
+            </p>
+          </header>
 
-          {/* Step 3 */}
-          <div className="flex gap-4 relative">
-            <div className="w-11 h-11 rounded-full bg-muted border-2 border-muted-foreground/30 flex items-center justify-center shrink-0">
-              <Star className="w-5 h-5 text-muted-foreground" />
-            </div>
-            <div className="space-y-1 pt-1">
-              <h3 className="text-base font-semibold text-foreground">Day 7 - Trial ends</h3>
-              <p className="text-sm text-muted-foreground">If you cancel before, you can still use the basic version.</p>
-            </div>
-          </div>
+          {/* Body */}
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Timeline */}
+            <div className="relative bg-card-glass/90 backdrop-blur-md rounded-2xl border border-white/20 p-5 text-white/90 shadow-soft">
+              <div className="absolute left-6 top-10 bottom-10 w-0.5 bg-white/25" aria-hidden="true" />
 
-          {/* Step 4 */}
-          <div className="flex gap-4 relative">
-            <div className="w-11 h-11 rounded-full bg-muted border-2 border-muted-foreground/30 flex items-center justify-center shrink-0">
-              <CreditCard className="w-5 h-5 text-muted-foreground" />
-            </div>
-            <div className="space-y-1 pt-1">
-              <h3 className="text-base font-semibold text-foreground">Billed yearly</h3>
-              <p className="text-sm text-muted-foreground">Cancel whenever you want. Manage subscriptions through your account settings.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Pricing cards */}
-        <div className="space-y-3">
-          {/* Yearly plan */}
-          <Card 
-            className={`relative p-4 cursor-pointer transition-all ${
-              selectedPlan === 'yearly' 
-                ? 'bg-gradient-warm border-2 border-primary shadow-medium' 
-                : 'bg-card/80 border-muted-foreground/20 hover:bg-card'
-            }`}
-            onClick={() => setSelectedPlan('yearly')}
-          >
-            {selectedPlan === 'yearly' && (
-              <div className="absolute -top-3 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                SAVE 67%
+              <div className="relative flex gap-4 mb-6">
+                <div className="w-10 h-10 rounded-full bg-white/15 border border-white/30 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white/90">Installed</h3>
+                  <p className="text-sm text-white/75">Your profile is set. Welcome aboard.</p>
+                </div>
               </div>
-            )}
-            <div className="space-y-2">
-              <h3 className="text-sm font-medium text-muted-foreground">YEARLY PREMIUM</h3>
-              <p className="text-xl font-bold text-foreground">Free trial for 1 week</p>
-              <div className="flex items-baseline justify-between">
-                <span className="text-lg font-semibold text-foreground">$39.99 / year</span>
-                <span className="text-sm text-muted-foreground">$0.11 / day</span>
-              </div>
-            </div>
-          </Card>
 
-          {/* Monthly plan */}
-          <Card 
-            className={`p-4 cursor-pointer transition-all ${
-              selectedPlan === 'monthly' 
-                ? 'bg-gradient-warm border-2 border-primary shadow-medium' 
-                : 'bg-card/80 border-muted-foreground/20 hover:bg-card'
-            }`}
-            onClick={() => setSelectedPlan('monthly')}
-          >
-            <div className="space-y-2">
-              <h3 className="text-sm font-medium text-muted-foreground">MONTHLY PREMIUM</h3>
-              <div className="flex items-baseline justify-between">
-                <span className="text-lg font-semibold text-foreground">$9.99 / month</span>
-                <span className="text-sm text-muted-foreground">$0.33 / day</span>
+              <div className="relative flex gap-4 mb-6">
+                <div className="w-10 h-10 rounded-full bg-white/15 border border-white/30 flex items-center justify-center shrink-0">
+                  <Waves className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-white">Today — Get instant access</h3>
+                  <p className="text-sm text-white/80">Offline maps, marina info, coves and waypoints.</p>
+                </div>
+              </div>
+
+              <div className="relative flex gap-4 mb-6">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                  <Star className="w-5 h-5 text-white/90" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-white">Day 7 — Trial ends</h3>
+                  <p className="text-sm text-white/75">Cancel anytime. Keep basic features forever.</p>
+                </div>
+              </div>
+
+              <div className="relative flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                  <CreditCard className="w-5 h-5 text-white/90" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-white">Billed yearly</h3>
+                  <p className="text-sm text-white/75">Transparent pricing. Manage in Settings.</p>
+                </div>
               </div>
             </div>
-          </Card>
-        </div>
 
-        {/* Start trial button */}
-        <Button 
-          onClick={handleStartTrial}
-          size="full"
-          className="h-14 text-base font-semibold"
-        >
-          Start trial
-        </Button>
+            {/* Plans */}
+            <div className="space-y-3">
+              <Card
+                className={`relative p-5 rounded-2xl cursor-pointer transition-all hover-scale backdrop-blur-md shadow-medium border border-white/30 ${
+                  selectedPlan === 'yearly'
+                    ? 'bg-gradient-warm text-secondary-foreground'
+                    : 'bg-card-glass/80 text-white'
+                }`}
+                onClick={() => setSelectedPlan('yearly')}
+              >
+                {selectedPlan === 'yearly' && (
+                  <div className="absolute -top-3 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-soft">
+                    SAVE 67%
+                  </div>
+                )}
+                <div className="space-y-1">
+                  <h3 className="text-sm font-medium opacity-90">YEARLY PREMIUM</h3>
+                  <p className="text-2xl font-bold">Free trial for 1 week</p>
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-lg font-semibold">$39.99 / year</span>
+                    <span className="text-sm opacity-90">$0.11 / day</span>
+                  </div>
+                </div>
+              </Card>
 
-        {/* Footer text */}
-        <div className="text-center space-y-2">
-          <p className="text-xs text-muted-foreground">
-            Then ${selectedPlan === 'yearly' ? '39.99' : '9.99'} / {selectedPlan === 'yearly' ? 'year' : 'month'}. Recurring billing. Cancel anytime.
-          </p>
-          <button className="text-sm text-primary hover:text-primary-light underline transition-colors">
-            Redeem code
-          </button>
-        </div>
-      </div>
+              <Card
+                className={`p-5 rounded-2xl cursor-pointer transition-all hover-scale backdrop-blur-md shadow-soft border border-white/20 ${
+                  selectedPlan === 'monthly' ? 'bg-gradient-warm text-secondary-foreground' : 'bg-card-glass/80 text-white'
+                }`}
+                onClick={() => setSelectedPlan('monthly')}
+              >
+                <div className="space-y-1">
+                  <h3 className="text-sm font-medium opacity-90">MONTHLY PREMIUM</h3>
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-lg font-semibold">$9.99 / month</span>
+                    <span className="text-sm opacity-90">$0.33 / day</span>
+                  </div>
+                </div>
+              </Card>
+
+              <Button onClick={handleStartTrial} size="full" className="h-14 text-base font-semibold rounded-full mt-4">
+                Start free trial
+              </Button>
+
+              <p className="text-center text-white/80 text-xs">
+                Then {selectedPlan === 'yearly' ? '$39.99 / year' : '$9.99 / month'}. Recurring billing. Cancel anytime.
+              </p>
+
+              <button className="story-link block mx-auto text-sm text-white/90">
+                Redeem code
+              </button>
+            </div>
+          </section>
+        </article>
+      </main>
     </div>
   );
 };
