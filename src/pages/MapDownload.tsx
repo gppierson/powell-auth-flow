@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { WifiOff, Download, MapPin, CheckCircle2 } from "lucide-react";
+import { WifiOff, Download, MapPin, CheckCircle2, Map } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
 
@@ -37,11 +38,10 @@ const MapDownload = () => {
       <div className="w-full max-w-lg mx-auto">
         <div className="text-center mb-6 animate-fade-in">
           <div className="flex justify-center mb-4">
-            <img 
-              src="/lovable-uploads/9ca600e0-ffc4-4e33-9b1a-8bd3d97c3757.png" 
-              alt="Lake Powell Navigator Logo" 
-              className="w-16 h-16 rounded-2xl shadow-medium"
-            />
+            <div className="relative w-16 h-16 rounded-2xl shadow-medium bg-primary/10 flex items-center justify-center">
+              <Map className="w-8 h-8 text-primary" />
+              <Download className="w-4 h-4 text-primary absolute -bottom-1 -right-1 bg-background rounded-full p-0.5" />
+            </div>
           </div>
           
           <h1 className="text-2xl font-bold text-foreground mb-2 bg-gradient-hero bg-clip-text text-transparent">
