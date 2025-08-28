@@ -124,7 +124,7 @@ const MapDownload = () => {
                     className="w-full flex items-center gap-2"
                   >
                     <Download className="w-4 h-4" />
-                    {isDownloading ? "Downloading..." : "Get Map Now (52 MB)"}
+                    {isDownloading ? "Downloading..." : "Get Map Now (5 MB)"}
                   </Button>
                   
                   <Button 
