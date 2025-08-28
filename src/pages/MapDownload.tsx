@@ -5,12 +5,23 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { WifiOff, Download, MapPin, CheckCircle2, Map } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 const MapDownload = () => {
   const navigate = useNavigate();
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [downloadComplete, setDownloadComplete] = useState(false);
+  const [showSkipWarning, setShowSkipWarning] = useState(false);
 
   const handleDownload = () => {
     setIsDownloading(true);
@@ -29,7 +40,11 @@ const MapDownload = () => {
   };
 
   const handleSkip = () => {
-    // Navigate to map page
+    setShowSkipWarning(true);
+  };
+
+  const confirmSkip = () => {
+    setShowSkipWarning(false);
     navigate('/map');
   };
 
@@ -118,7 +133,7 @@ const MapDownload = () => {
                     disabled={isDownloading}
                     className="w-full"
                   >
-                    Remind Me Later
+                    I Don't Want To Download
                   </Button>
                 </>
               ) : (
@@ -139,6 +154,21 @@ const MapDownload = () => {
           </CardContent>
         </Card>
       </div>
+
+      <AlertDialog open={showSkipWarning} onOpenChange={setShowSkipWarning}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              When offline you won't have all the features.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={confirmSkip}>Continue Anyway</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };
