@@ -165,7 +165,7 @@ const MapDownload = () => {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={confirmSkip}>Continue Anyway</AlertDialogAction>
+            <AlertDialogAction onClick={confirmSkip}>Don't Download Offline Map</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
